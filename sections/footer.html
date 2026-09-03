@@ -1,0 +1,31 @@
+<!-- ═══════════════════════════════════════════
+     ChristMyCore · Footer Section
+     Include in index.html via JS or copy inline
+     ═══════════════════════════════════════════ -->
+
+<footer>
+  <a href="/" class="footer-logo">
+    <img src="assets/images/logo.png" alt="ChristMyCore"/>
+    <span class="footer-logo-text">ChristMyCore</span>
+  </a>
+  <div class="footer-links">
+    <a href="#">About</a>
+    <a href="#">Features</a>
+    <a href="#">For Churches</a>
+    <a href="#">Blog</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+  <span class="footer-copy">© 2026 ChristMyCore · Auckland, NZ · All rights reserved</span>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); }
+  });
+},{threshold:0.12});
+reveals.forEach(r => io.observe(r));
+</script>
