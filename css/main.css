@@ -487,8 +487,15 @@ nav{
 }
 .feature-card:hover{background:rgba(33,44,82,0.9);}
 .feature-icon{
-  font-size:1.8rem;margin-bottom:1.2rem;
-  display:block;
+  width:48px;height:48px;margin-bottom:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:12px;
+  background:rgba(91,92,226,0.16);
+}
+.feature-icon svg{
+  width:24px;height:24px;
+  stroke:var(--gold);fill:none;
+  stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;
 }
 .feature-h3{
   font-family:var(--r);font-size:1.15rem;font-weight:500;
@@ -648,7 +655,17 @@ nav{
   border-color:rgba(91,92,226,0.5);
   transform:translateY(-4px);
 }
-.pillar-icon{font-size:2rem;margin-bottom:1rem;display:block;}
+.pillar-icon{
+  width:48px;height:48px;margin:0 auto 1rem;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:12px;
+  background:rgba(91,92,226,0.16);
+}
+.pillar-icon svg{
+  width:24px;height:24px;
+  stroke:var(--gold);fill:none;
+  stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;
+}
 .pillar-name{
   font-family:var(--r);font-size:0.95rem;font-weight:500;
   color:#F1F2FA;margin-bottom:0.5rem;
