@@ -24,6 +24,7 @@
   --r: Fraunces, Georgia, serif;
   --s: "Work Sans", system-ui, sans-serif;
   --m: "IBM Plex Mono", monospace;
+  --banner-h:44px;
 }
 html{scroll-behavior:smooth}
 body{
@@ -34,9 +35,28 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
+/* ── ANNOUNCEMENT BANNER ──────────────────────── */
+.announce-banner{
+  position:fixed;top:0;left:0;right:0;z-index:110;
+  height:var(--banner-h);
+  display:flex;align-items:center;justify-content:center;gap:0.6rem;
+  padding:0 1rem;
+  background:var(--gold);color:var(--dark);
+  font-family:var(--s);font-size:0.8rem;font-weight:500;
+  letter-spacing:0.01em;text-align:center;
+}
+.announce-banner-badge{
+  font-family:var(--m);font-size:0.68rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.06em;
+  background:var(--dark);color:var(--gold);
+  padding:0.2rem 0.55rem;border-radius:5px;
+  white-space:nowrap;
+}
+.announce-banner-short{display:none;}
+
 /* ── NAV ─────────────────────────────────────── */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
+  position:fixed;top:var(--banner-h);left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:1.2rem 5vw;
   background:rgba(246,246,251,0.92);
@@ -81,7 +101,7 @@ nav{
   display:grid;
   grid-template-columns:1fr 1fr;
   align-items:center;
-  padding:8rem 5vw 5rem;
+  padding:calc(8rem + var(--banner-h)) 5vw 5rem;
   position:relative;
   overflow:hidden;
   gap:3rem;
@@ -835,11 +855,16 @@ footer{
   .float-badge.badge-right{right:-20px;}
 }
 @media(max-width:768px){
-  .hero{grid-template-columns:1fr;padding:7rem 5vw 4rem;}
+  .hero{grid-template-columns:1fr;padding:calc(7rem + var(--banner-h)) 5vw 4rem;}
   .hero-right{display:none;}
   .hero-h1{font-size:2.8rem;}
   .nav-links{display:none;}
   .nav-menu-btn{display:block;}
+  .nav-cta{font-size:0.72rem;padding:0.5rem 0.9rem;}
+  .announce-banner{gap:0.4rem;padding:0 0.75rem;font-size:0.72rem;}
+  .announce-banner-badge{font-size:0.6rem;padding:0.15rem 0.4rem;}
+  .announce-banner-full{display:none;}
+  .announce-banner-short{display:inline;}
   .features-grid{grid-template-columns:1fr;}
   .journey-grid{grid-template-columns:1fr;gap:3rem;}
   .testi-grid{grid-template-columns:1fr;}
