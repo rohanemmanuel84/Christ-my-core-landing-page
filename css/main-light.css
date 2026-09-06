@@ -833,6 +833,17 @@ footer{
   text-decoration:none;transition:color 0.2s;
 }
 .footer-links a:hover{color:var(--primary);}
+.footer-social{display:flex;gap:0.7rem;}
+.footer-social a{
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  border:1px solid rgba(91,92,226,0.25);
+  color:rgba(23,33,63,0.4);
+  transition:color 0.2s,border-color 0.2s,background 0.2s;
+}
+.footer-social a:hover{color:var(--gold-dark);border-color:var(--gold-dark);background:rgba(194,147,59,0.08);}
+.footer-social svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
 .footer-copy{
   font-size:0.75rem;color:var(--muted);
   font-family:var(--m);
