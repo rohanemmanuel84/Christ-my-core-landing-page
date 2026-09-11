@@ -25,6 +25,8 @@
   --s: "Work Sans", system-ui, sans-serif;
   --m: "IBM Plex Mono", monospace;
   --banner-h:44px;
+  --radius-card:28px;
+  --radius-btn:980px;
 }
 html{scroll-behavior:smooth}
 body{
@@ -56,13 +58,15 @@ body{
 
 /* ── NAV ─────────────────────────────────────── */
 nav{
-  position:fixed;top:var(--banner-h);left:0;right:0;z-index:100;
+  position:fixed;top:calc(var(--banner-h) + 1rem);left:1.5rem;right:1.5rem;z-index:100;
+  max-width:1200px;margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1.2rem 5vw;
-  background:rgba(246,246,251,0.92);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(91,92,226,0.18);
+  padding:0.9rem 1.8rem;
+  background:rgba(246,246,251,0.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(91,92,226,0.18);
+  border-radius:var(--radius-btn);
 }
 .nav-logo{
   display:flex;align-items:center;gap:0.75rem;
@@ -86,7 +90,7 @@ nav{
   background:var(--primary);color:#fff;
   border:none;padding:0.65rem 1.5rem;
   font-family:var(--s);font-size:0.85rem;font-weight:600;
-  border-radius:8px;cursor:pointer;
+  border-radius:var(--radius-btn);cursor:pointer;
   text-decoration:none;
   transition:background 0.2s,transform 0.15s;
   white-space:nowrap;
@@ -101,7 +105,7 @@ nav{
   display:grid;
   grid-template-columns:1fr 1fr;
   align-items:center;
-  padding:calc(8rem + var(--banner-h)) 5vw 5rem;
+  padding:calc(9.5rem + var(--banner-h)) 5vw 5rem;
   position:relative;
   overflow:hidden;
   gap:3rem;
@@ -156,10 +160,10 @@ nav{
 }
 .hero-h1{
   font-family:var(--r);
-  font-size:clamp(2.8rem, 5.5vw, 5rem);
+  font-size:clamp(3.2rem, 6.5vw, 6.5rem);
   font-weight:600;
-  line-height:1.05;
-  letter-spacing:-0.02em;
+  line-height:1.02;
+  letter-spacing:-0.03em;
   color:var(--dark);
   margin-bottom:1.5rem;
   opacity:0;animation:fadeUp 0.6s 0.35s ease forwards;
@@ -183,16 +187,14 @@ nav{
 .btn-primary-lg{
   display:inline-flex;align-items:center;gap:0.6rem;
   background:var(--primary);color:#fff;
-  padding:1rem 2.2rem;border-radius:10px;
+  padding:1rem 2.2rem;border-radius:var(--radius-btn);
   font-size:1rem;font-weight:600;font-family:var(--s);
   text-decoration:none;border:none;cursor:pointer;
-  transition:background 0.2s,transform 0.15s,box-shadow 0.2s;
-  box-shadow:0 4px 24px rgba(91,92,226,0.4);
+  transition:background 0.2s,transform 0.15s;
 }
 .btn-primary-lg:hover{
   background:var(--primary-deep);
   transform:translateY(-2px);
-  box-shadow:0 8px 32px rgba(91,92,226,0.5);
 }
 .btn-primary-lg .arrow{font-size:1.1rem;transition:transform 0.2s;}
 .btn-primary-lg:hover .arrow{transform:translateX(3px);}
@@ -264,7 +266,6 @@ nav{
   padding:12px;
   box-shadow:
     0 0 0 1px rgba(91,92,226,0.3),
-    0 40px 80px rgba(23,33,63,0.25),
     inset 0 1px 0 rgba(255,255,255,0.08);
   position:relative;
   margin:0 auto;
@@ -374,10 +375,9 @@ nav{
   position:absolute;
   background:rgba(23,33,63,0.9);
   border:1px solid rgba(91,92,226,0.3);
-  border-radius:12px;
+  border-radius:16px;
   padding:0.6rem 0.9rem;
   backdrop-filter:blur(8px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.3);
   display:flex;align-items:center;gap:0.6rem;
   font-size:0.75rem;
   white-space:nowrap;
@@ -458,10 +458,11 @@ nav{
 }
 .section-h2{
   font-family:var(--r);
-  font-size:clamp(2rem, 4vw, 3.2rem);
-  font-weight:500;line-height:1.15;
+  font-size:clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight:500;line-height:1.12;
+  letter-spacing:-0.02em;
   color:var(--dark);
-  max-width:600px;
+  max-width:640px;
   margin-bottom:1.5rem;
 }
 .section-sub{
@@ -476,7 +477,7 @@ nav{
   gap:1.5px;
   background:var(--border);
   border:1px solid var(--border);
-  border-radius:20px;
+  border-radius:var(--radius-card);
   overflow:hidden;
 }
 .feature-card{
@@ -561,7 +562,7 @@ nav{
 .assess-visual{
   background:var(--surface);
   border:1px solid var(--border);
-  border-radius:20px;
+  border-radius:var(--radius-card);
   padding:2rem;
   position:relative;
 }
@@ -645,7 +646,7 @@ nav{
 .pillar-card{
   background:rgba(255,255,255,0.82);
   border:1px solid var(--border);
-  border-radius:16px;
+  border-radius:var(--radius-card);
   padding:1.8rem 1.2rem;
   text-align:center;
   transition:border-color 0.3s,transform 0.3s;
@@ -709,7 +710,7 @@ nav{
 .testi-card{
   background:rgba(255,255,255,0.85);
   border:1px solid var(--border);
-  border-radius:16px;
+  border-radius:var(--radius-card);
   padding:2rem;
   position:relative;
 }
@@ -762,10 +763,11 @@ nav{
 }
 .cta-h2{
   font-family:var(--r);
-  font-size:clamp(2.2rem, 5vw, 4rem);
-  font-weight:600;line-height:1.1;
+  font-size:clamp(2.4rem, 5.5vw, 4.6rem);
+  font-weight:600;line-height:1.08;
+  letter-spacing:-0.025em;
   color:var(--dark);
-  max-width:680px;margin:0 auto 1.5rem;
+  max-width:700px;margin:0 auto 1.5rem;
   position:relative;z-index:1;
 }
 .cta-sub{
@@ -784,7 +786,7 @@ nav{
   display:inline-flex;align-items:center;gap:0.7rem;
   background:rgba(23,33,63,0.05);
   border:1px solid var(--border);
-  border-radius:12px;
+  border-radius:20px;
   padding:0.9rem 1.6rem;
   text-decoration:none;
   transition:background 0.2s,border-color 0.2s;
@@ -883,9 +885,10 @@ footer{
   .float-badge.badge-right{right:-20px;}
 }
 @media(max-width:768px){
-  .hero{grid-template-columns:1fr;padding:calc(7rem + var(--banner-h)) 5vw 4rem;}
+  .hero{grid-template-columns:1fr;padding:calc(8.5rem + var(--banner-h)) 5vw 4rem;}
   .hero-right{display:none;}
   .hero-h1{font-size:2.8rem;}
+  nav{left:0.75rem;right:0.75rem;padding:0.8rem 1.2rem;}
   .nav-links{display:none;}
   .nav-menu-btn{display:block;}
   .nav-cta{font-size:0.72rem;padding:0.5rem 0.9rem;}
