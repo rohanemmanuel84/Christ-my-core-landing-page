@@ -383,6 +383,7 @@ nav{
 /* floating badges */
 .float-badge{
   position:absolute;
+  z-index:5;
   background:rgba(23,33,63,0.9);
   border:1px solid rgba(91,92,226,0.3);
   border-radius:16px;
