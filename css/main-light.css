@@ -72,10 +72,10 @@ nav{
   display:flex;align-items:center;gap:0.75rem;
   text-decoration:none;
 }
-.nav-logo img{width:36px;height:36px;object-fit:contain;filter:none;}
+.nav-logo img{height:56px;width:auto;object-fit:contain;}
 .nav-logo-text{
   font-family:var(--r);
-  font-size:1.15rem;font-weight:500;
+  font-size:1.4rem;font-weight:500;
   color:var(--dark);letter-spacing:0.01em;
 }
 .nav-logo-text span{color:var(--gold);}
@@ -305,9 +305,8 @@ nav{
   display:flex;align-items:center;gap:0.5rem;
 }
 .phone-logo-img{
-  width:22px;height:22px;
+  height:28px;width:auto;
   object-fit:contain;
-  filter:brightness(0) invert(1);
 }
 .phone-logo-name{
   font-family:var(--r);font-size:0.8rem;font-weight:500;color:#F1F2FA;
@@ -394,7 +393,7 @@ nav{
   white-space:nowrap;
 }
 .float-badge.badge-left{
-  left:-70px;top:25%;
+  left:-85px;top:40%;
   animation:floatL 4s ease-in-out infinite;
 }
 .float-badge.badge-right{
@@ -834,9 +833,9 @@ footer{
   display:flex;align-items:center;gap:0.6rem;
   text-decoration:none;
 }
-.footer-logo img{width:28px;height:28px;object-fit:contain;filter:none;}
+.footer-logo img{height:56px;width:auto;object-fit:contain;}
 .footer-logo-text{
-  font-family:var(--r);font-size:1rem;font-weight:500;color:var(--dark);
+  font-family:var(--r);font-size:1.25rem;font-weight:500;color:var(--dark);
 }
 .footer-links{
   display:flex;gap:2rem;flex-wrap:wrap;
@@ -917,7 +916,10 @@ footer{
   .hero-right{display:none;}
   .hero-h1{font-size:2.8rem;}
   nav{left:0.75rem;right:0.75rem;padding:0.7rem 1.1rem;}
-  .nav-logo-text{font-size:1rem;}
+  .nav-logo img{height:42px;}
+  .nav-logo{gap:0.5rem;}
+  .nav-logo-text{font-size:1.05rem;}
+  .footer-logo img{height:48px;}
   .announce-banner{gap:0.4rem;padding:0 0.75rem;font-size:0.72rem;}
   .announce-banner-badge{font-size:0.6rem;padding:0.15rem 0.4rem;}
   .announce-banner-full{display:none;}
