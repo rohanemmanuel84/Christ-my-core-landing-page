@@ -31,6 +31,26 @@ section[id],#top{scroll-margin-top:24px}
 @media (max-width:560px){
   header nav > div{display:none !important}
 }
+
+.rp{cursor:pointer;outline:none}
+.rp .halo{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4);transition:opacity .25s,transform .25s}
+.rp .dot{transform-box:fill-box;transform-origin:center;transition:transform .25s}
+.rp.is-active .halo{opacity:1;transform:scale(1.15)}
+.rp.is-active .dot{transform:scale(1.9)}
+.rp,.rl,.bar-row,.pl-card{transition:opacity .25s,transform .25s,background .25s,border-color .25s,box-shadow .25s}
+.rp.is-dim,.rl.is-dim{opacity:.35}
+.rl{cursor:pointer}
+.rl.is-active{fill:#fff}
+.bar-row{padding:7px 10px;margin:-7px -10px;border-radius:12px;cursor:pointer;outline:none}
+.bar-row.is-active{background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px var(--pc)}
+.bar-row.is-active dt{font-weight:600;color:#fff}
+.bar-row.is-dim{opacity:.5}
+.pl-card{cursor:pointer;outline:none}
+.pl-card .pl-dot{transition:transform .25s,box-shadow .25s}
+.pl-card.is-active{transform:translateY(-6px);background:#1e2a58 !important;border-color:var(--pc) !important;box-shadow:0 22px 50px rgba(0,0,0,.4),0 0 44px color-mix(in srgb,var(--pc) 38%,transparent)}
+.pl-card.is-active .pl-dot{transform:scale(1.6);box-shadow:0 0 0 6px color-mix(in srgb,var(--pc) 30%,transparent)}
+.pl-card.is-dim{opacity:.6}
+@media (prefers-reduced-motion:reduce){.rp .halo,.rp .dot,.rp,.rl,.bar-row,.pl-card,.pl-card .pl-dot{transition:none}.pl-card.is-active{transform:none}}
 </style>
 </head>
 <body>
@@ -259,21 +279,21 @@ See how it works</a>
 <polygon points="210,163.3 254.4,195.6 237.4,247.8 182.6,247.8 165.6,195.6" fill="none" stroke="rgba(216,219,255,.12)" stroke-width="1.5"/>
 <path d="M210 210V70M210 210L343.2 166.7M210 210L292.3 323.3M210 210L127.7 323.3M210 210L76.8 166.7" stroke="rgba(216,219,255,.14)" stroke-width="1.5"/>
 <polygon points="210,100.8 292.6,183.2 279.9,306.3 164.7,272.3 116.8,179.7" fill="rgba(117,120,245,.42)" stroke="#9EA1FF" stroke-width="2.5" stroke-linejoin="round"/>
-<circle cx="210" cy="100.8" r="5" fill="#fff"/><circle cx="292.6" cy="183.2" r="5" fill="#fff"/><circle cx="279.9" cy="306.3" r="5" fill="#fff"/><circle cx="164.7" cy="272.3" r="5" fill="#fff"/><circle cx="116.8" cy="179.7" r="5" fill="#fff"/>
+<g class="rp" data-p="0" tabindex="0" role="button" aria-label="Highlight pillar 1"><circle class="hit" cx="210" cy="100.8" r="18" fill="transparent"/><circle class="halo" cx="210" cy="100.8" r="11" fill="#7578F5" fill-opacity=".45"/><circle class="dot" cx="210" cy="100.8" r="5" fill="#fff"/></g><g class="rp" data-p="1" tabindex="0" role="button" aria-label="Highlight pillar 2"><circle class="hit" cx="292.6" cy="183.2" r="18" fill="transparent"/><circle class="halo" cx="292.6" cy="183.2" r="11" fill="#C2933B" fill-opacity=".45"/><circle class="dot" cx="292.6" cy="183.2" r="5" fill="#fff"/></g><g class="rp" data-p="2" tabindex="0" role="button" aria-label="Highlight pillar 3"><circle class="hit" cx="279.9" cy="306.3" r="18" fill="transparent"/><circle class="halo" cx="279.9" cy="306.3" r="11" fill="#2F9E6E" fill-opacity=".45"/><circle class="dot" cx="279.9" cy="306.3" r="5" fill="#fff"/></g><g class="rp" data-p="3" tabindex="0" role="button" aria-label="Highlight pillar 4"><circle class="hit" cx="164.7" cy="272.3" r="18" fill="transparent"/><circle class="halo" cx="164.7" cy="272.3" r="11" fill="#5B5CE2" fill-opacity=".45"/><circle class="dot" cx="164.7" cy="272.3" r="5" fill="#fff"/></g><g class="rp" data-p="4" tabindex="0" role="button" aria-label="Highlight pillar 5"><circle class="hit" cx="116.8" cy="179.7" r="18" fill="transparent"/><circle class="halo" cx="116.8" cy="179.7" r="11" fill="#D9B26A" fill-opacity=".45"/><circle class="dot" cx="116.8" cy="179.7" r="5" fill="#fff"/></g>
 <g font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" letter-spacing="1.5" fill="#D8DBFF">
-<text x="210" y="48" text-anchor="middle">IGNITE</text>
-<text x="360" y="162" text-anchor="start">INSIGHT</text>
-<text x="60" y="162" text-anchor="end">INVITE</text>
-<text x="118" y="352" text-anchor="middle">UNITE</text>
-<text x="302" y="352" text-anchor="middle">UPRIGHT</text>
+<text x="210" y="48" text-anchor="middle" class="rl" data-p="0">IGNITE</text>
+<text x="360" y="162" text-anchor="start" class="rl" data-p="1">INSIGHT</text>
+<text x="60" y="162" text-anchor="end" class="rl" data-p="4">INVITE</text>
+<text x="118" y="352" text-anchor="middle" class="rl" data-p="3">UNITE</text>
+<text x="302" y="352" text-anchor="middle" class="rl" data-p="2">UPRIGHT</text>
 </g>
 </svg>
 <dl style="margin:0;width:100%;display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Ignite</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:78%;height:8px;border-radius:4px;background:#7578F5"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">78%</dd></div>
-<div style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Insight</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:62%;height:8px;border-radius:4px;background:#C2933B"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">62%</dd></div>
-<div style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Upright</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:85%;height:8px;border-radius:4px;background:#2F9E6E"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">85%</dd></div>
-<div style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Unite</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:55%;height:8px;border-radius:4px;background:#5B5CE2"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">55%</dd></div>
-<div style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Invite</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:70%;height:8px;border-radius:4px;background:#D8DBFF"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">70%</dd></div>
+<div class="bar-row" data-p="0" tabindex="0" style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Ignite</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:78%;height:8px;border-radius:4px;background:#7578F5"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">78%</dd></div>
+<div class="bar-row" data-p="1" tabindex="0" style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Insight</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:62%;height:8px;border-radius:4px;background:#C2933B"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">62%</dd></div>
+<div class="bar-row" data-p="2" tabindex="0" style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Upright</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:85%;height:8px;border-radius:4px;background:#2F9E6E"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">85%</dd></div>
+<div class="bar-row" data-p="3" tabindex="0" style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Unite</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:55%;height:8px;border-radius:4px;background:#5B5CE2"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">55%</dd></div>
+<div class="bar-row" data-p="4" tabindex="0" style="display:flex;align-items:center;gap:14px"><dt style="width:72px;font:400 11.5px/1 'Work Sans',sans-serif;color:#E8EAFB">Invite</dt><dd style="margin:0;flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,.1)"><span style="display:block;width:70%;height:8px;border-radius:4px;background:#D8DBFF"></span></dd><dd style="margin:0;width:40px;text-align:right;font:400 9.9px/1 'IBM Plex Mono',monospace;color:#fff">70%</dd></div>
 </dl>
 </div>
 </div>
@@ -288,33 +308,33 @@ See how it works</a>
 <p style="margin:0;font:300 16px/1.7 'Work Sans',sans-serif;color:rgba(241,242,250,.62);text-wrap:pretty">Every follower of Christ grows — or stagnates — across five essential areas. ChristMyCore helps you see which ones need water.</p>
 </div>
 <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:18px">
-<article style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
+<article class="pl-card" data-p="0" tabindex="0" style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
 <span style="font:500 11.2px/1 'IBM Plex Mono',monospace;color:#D9B26A;font-weight:600">01</span>
-<span style="width:12px;height:12px;border-radius:50%;background:#7578F5"></span>
+<span class="pl-dot" style="width:12px;height:12px;border-radius:50%;background:#7578F5"></span>
 <h3 style="margin:0;font:500 15.2px/1.3 'Fraunces',Georgia,serif;color:#fff">Ignite</h3>
 <p style="margin:0;font:400 12px/1.6 'Work Sans',sans-serif;color:#C9CDF5">Keeping the spiritual fire and personal walk burning brightly.</p>
 </article>
-<article style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
+<article class="pl-card" data-p="1" tabindex="0" style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
 <span style="font:500 11.2px/1 'IBM Plex Mono',monospace;color:#D9B26A;font-weight:600">02</span>
-<span style="width:12px;height:12px;border-radius:50%;background:#C2933B"></span>
+<span class="pl-dot" style="width:12px;height:12px;border-radius:50%;background:#C2933B"></span>
 <h3 style="margin:0;font:500 15.2px/1.3 'Fraunces',Georgia,serif;color:#fff">Insight</h3>
 <p style="margin:0;font:400 12px/1.6 'Work Sans',sans-serif;color:#C9CDF5">Gaining theological depth and foundational understanding.</p>
 </article>
-<article style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
+<article class="pl-card" data-p="2" tabindex="0" style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
 <span style="font:500 11.2px/1 'IBM Plex Mono',monospace;color:#D9B26A;font-weight:600">03</span>
-<span style="width:12px;height:12px;border-radius:50%;background:#2F9E6E"></span>
+<span class="pl-dot" style="width:12px;height:12px;border-radius:50%;background:#2F9E6E"></span>
 <h3 style="margin:0;font:500 15.2px/1.3 'Fraunces',Georgia,serif;color:#fff">Upright</h3>
 <p style="margin:0;font:400 12px/1.6 'Work Sans',sans-serif;color:#C9CDF5">Maintaining stellar character and stewardship.</p>
 </article>
-<article style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
+<article class="pl-card" data-p="3" tabindex="0" style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
 <span style="font:500 11.2px/1 'IBM Plex Mono',monospace;color:#D9B26A;font-weight:600">04</span>
-<span style="width:12px;height:12px;border-radius:50%;background:#5B5CE2"></span>
+<span class="pl-dot" style="width:12px;height:12px;border-radius:50%;background:#5B5CE2"></span>
 <h3 style="margin:0;font:500 15.2px/1.3 'Fraunces',Georgia,serif;color:#fff">Unite</h3>
 <p style="margin:0;font:400 12px/1.6 'Work Sans',sans-serif;color:#C9CDF5">Building bridges, fellowship, and healthy engagements.</p>
 </article>
-<article style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
+<article class="pl-card" data-p="4" tabindex="0" style="border-radius:28px;padding:28px 24px 32px;background:#17213F;border:1px solid rgba(255,255,255,.10);display:flex;flex-direction:column;gap:14px;min-height:190px">
 <span style="font:500 11.2px/1 'IBM Plex Mono',monospace;color:#D9B26A;font-weight:600">05</span>
-<span style="width:12px;height:12px;border-radius:50%;background:#D9B26A"></span>
+<span class="pl-dot" style="width:12px;height:12px;border-radius:50%;background:#D9B26A"></span>
 <h3 style="margin:0;font:500 15.2px/1.3 'Fraunces',Georgia,serif;color:#fff">Invite</h3>
 <p style="margin:0;font:400 12px/1.6 'Work Sans',sans-serif;color:#C9CDF5">Bringing others into the Kingdom and living out the Great Commission.</p>
 </article>
@@ -419,5 +439,29 @@ See how it works</a>
 
 </div>
 
+<script>
+(function(){
+  var cols=['#7578F5','#C2933B','#2F9E6E','#5B5CE2','#D9B26A'];
+  var els=[].slice.call(document.querySelectorAll('[data-p]'));
+  function set(p){
+    els.forEach(function(e){
+      var q=e.getAttribute('data-p');
+      e.style.setProperty('--pc',cols[q]);
+      e.classList.toggle('is-active',p!==null&&q===p);
+      e.classList.toggle('is-dim',p!==null&&q!==p);
+    });
+  }
+  els.forEach(function(e){
+    var p=e.getAttribute('data-p');
+    e.addEventListener('pointerenter',function(){set(p)});
+    e.addEventListener('pointerleave',function(ev){if(ev.pointerType==='mouse')set(null)});
+    e.addEventListener('focus',function(){set(p)});
+    e.addEventListener('blur',function(){set(null)});
+    e.addEventListener('click',function(ev){ev.stopPropagation();set(p)});
+  });
+  document.addEventListener('click',function(){set(null)});
+  set(null);
+})();
+</script>
 </body>
 </html>
